@@ -1,4 +1,4 @@
-package thermometers
+package sensors
 
 import (
 	"io/ioutil"
