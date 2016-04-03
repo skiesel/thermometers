@@ -1,6 +1,7 @@
 package sensors
 
 import (
+	"fmt"
 	"io/ioutil"
 	"os"
 	"os/exec"
@@ -33,7 +34,8 @@ func init() {
 	//get a list of sensor candidates
 	dirs, err := ioutil.ReadDir(sensorBaseDirectory)
 	if err != nil {
-		panic(err)
+		fmt.Fprintf(os.Stderr, "%v\n", err)
+		return
 	}
 
 	//let's see what sensors might exist
